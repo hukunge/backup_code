@@ -24,9 +24,9 @@ public class ViewInjectUtils {
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
             //获得每个成员变量上面的ViewInject注解，没有的话，就会返回null
-            ViewInject viewInject = field.getAnnotation(ViewInject.class);
-            if (viewInject != null) {
-                int viewId = viewInject.value();
+            Bind bind = field.getAnnotation(Bind.class);
+            if (bind != null) {
+                int viewId = bind.value();
                 View view = activity.findViewById(viewId);
                 try {
                     field.setAccessible(true);
