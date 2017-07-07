@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.bt_test)
     private void clickTest() {
+        //TODO crash
         tvHello.setText("我是click后的textview");
     }
 
